@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AetherAI OS: The First Dedicated AI Operating System</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9; /* Light background */
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a1a1a; /* Dark header */
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #61dafb; /* React blue for AI/tech feel */
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #61dafb; /* Hover effect */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a, #2c2c54); /* Dark gradient */
+            color: white;
+            text-align: center;
+            padding: 6rem 20px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #61dafb;
+            color: #1a1a1a;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #21a2fc;
+            transform: scale(1.05);
+        }
+
+        /* Core Values Section */
+        .core-values {
+            padding: 5rem 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .value-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #61dafb;
+        }
+        .value-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        .value-card p {
+            color: #666;
+        }
+
+        /* Technologies Section */
+        .technologies {
+            padding: 5rem 20px;
+            background-color: #eef2f7; /* Slightly different bg */
+            max-width: 1200px;
+            margin: auto;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .tech-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .tech-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+        }
+        .tech-card h3::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #61dafb;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .tech-card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        .tech-link {
+            color: #61dafb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .tech-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+        .license-info {
+            font-size: 0.85rem;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 1rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">AetherAI OS</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#values">Core Values</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="https://github.com/your-username/aetherai-os-repo" target="_blank">GitHub</a></li> <!-- Replace with actual link -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>AetherAIOS* The First Dedicated AI Operating System</h1>
+        <p>Where Advanced AI, Quantum Concepts, and Revolutionary Data Processing Meet the Core.</p>
+        <a href="#technologies" class="cta-button">Explore Technologies</a>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="values" class="core-values">
+        <h2 class="section-title">Core Value Propositions</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🧠</div>
+                <h3>Purpose-Built AI</h3>
+                <p>Not an add-on, but an OS born from AI. Designed solely for the next generation of artificial intelligence.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⚛️</div>
+                <h3>Quantum Integration</h3>
+                <p>Powered by HJK-QUANTUM*'s 'Megabit Quantum technology' for enhanced processing and simulation.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h3>Revolutionary Storage</h3>
+                <p>Featuring pioneering technologies like Zip-Based Technology (ZBT) and Double Type Bit Technology (DTBT).</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🧹</div>
+                <h3>Clean Architecture</h3>
+                <p>A focused, efficient system designed for maximum AI performance and innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="technologies">
+        <h2 class="section-title">Core Technologies</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h3>HJK-QUANTUM & Megabit Quantum</h3>
+                <p>The foundational core of AetherAI OS, providing advanced processing capabilities leveraging 'Megabit Quantum technology'.</p>
+                <p>This enables quantum-enhanced AI model training, secure processing, and simulation directly within the OS environment.</p>
+                <a href="https://github.com/hjk-inc/HJK-QUANTUM-" target="_blank" class="tech-link">Learn about HJK-QUANTUM</a>
+            </div>
+            <div class="tech-card">
+                <h3>Zip-Based Technology (ZBT)</h3>
+                <p>A revolutionary approach to system efficiency and security.</p>
+                <p>ZBT automatically compresses and encrypts inactive data and resources at the kernel level, reducing storage footprint and enhancing security.</p>
+            </div>
+            <div class="tech-card">
+                <h3>Double Type Bit Technology (DTBT)</h3>
+                <p>An innovative image and data processing methodology.</p>
+                <p>DTBT intelligently splits incoming data streams, processes them, and combines them to form an enhanced output, increasing effective data density and processing fidelity.</p>
+            </div>
+            <div class="tech-card">
+                <h3>Advanced AI Integration</h3>
+                <p>AI isn't just an application; it's a core system manager.</p>
+                <p>AetherAI OS uses AI for resource allocation, performance optimization, predictive maintenance, threat detection, and guiding ZBT/DTBT.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="core-values"> <!-- Reusing core-values style -->
+        <h2 class="section-title">About AetherAI OS</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="margin-bottom: 1.5rem;">AetherAI OS stands apart. While other systems adapt to AI, AetherAI OS <em>is</em> AI. It's a 'clean' design, purpose-built from the ground up, integrating HJK-QUANTUM's innovations and pioneering technologies like ZBT and DTBT to deliver an unparalleled platform for next-generation computing.</p>
+            <p>Built on the principles of open collaboration, AetherAI OS invites the community to explore, contribute, and shape the future of AI operating systems.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>AetherAI OS: Where Artificial Intelligence Meets the Operating System Kernel.</p>
+            <p class="license-info">
+                This project is subject to the terms of the HJK-QUANTUM ORGANIZATION LICENSE found in the HJK-QUANTUM repository (https://github.com/hjk-inc/HJK-QUANTUM-/blob/main/LICENSE), as it builds heavily upon that software. Please review the linked license for details regarding commercial use, contributions, and warranties.* are TM OF HJK-INC
+            </p>
+            <p>&copy; 2025 AetherAI OS Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple animation on scroll for value cards
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        document.querySelectorAll('.value-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Example: Log when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("AetherAI OS Website Loaded.");
+        });
+    </script>
+
+</body>
+  </html>
