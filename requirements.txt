@@ -1,0 +1,71 @@
+# Core system monitoring and interaction
+psutil>=5.9.0
+
+# Hardware and system information
+# cpuinfo is often installed via OS package manager or pip, but not always available
+# GPUtil requires nvidia-ml-py or pynvml for full functionality
+# For CPU info: py-cpuinfo (alternative to built-in cpuinfo module)
+py-cpuinfo>=9.0.0
+pynvml>=11.5.0 # For GPU monitoring via GPUtil or direct access
+
+# Numerical and Scientific Computing (for AI/Quantum simulation, data processing)
+numpy>=1.21.0
+scipy>=1.7.0
+
+# AI/ML Frameworks (Core for HJK-QUANTUM AI aspects)
+tensorflow>=2.8.0
+# OR PyTorch (choose one, or both if needed, though they can sometimes conflict)
+# torch>=1.12.0
+
+# GUI Framework (Aligns with HJK-QUANTUM's "advanced GUI" and GY concept)
+customtkinter>=5.0.0 # Or 'customtkinter' depending on the specific library used
+# tkinter usually comes with Python standard library, but CTk requires it
+
+# Networking and Communication (for remote jobs, HJK-QUANTUM API interaction, TY actions)
+requests>=2.28.0
+aiohttp>=3.8.0 # For asynchronous HTTP requests (e.g., in remote job engine)
+# websockets>=10.0 # If using WebSocket communication for HOKU or remote jobs
+
+# Data Serialization and Formats
+# json is part of the standard library
+# pickle is part of the standard library
+# yaml (requires PyYAML)
+PyYAML>=6.0
+
+# Database (for metrics, system state, FOGU logs)
+# sqlite3 is part of the standard library
+
+# Asynchronous Programming (for HOKU, WAVE, System Intelligence tasks)
+# asyncio is part of the standard library
+
+# Concurrency (for TY actions, system tasks)
+# threading is part of the standard library
+# concurrent.futures is part of the standard library
+
+# Cryptography (for FOGU security, ZBT encryption)
+# cryptography>=3.4.8 # Example, if encryption is implemented
+
+# System Interaction (for process tracking, system calls)
+# os, sys, subprocess are standard library
+
+# Logging (standard library used, but can be enhanced)
+# logging is part of the standard library
+
+# Testing/Development (optional, for validation)
+pytest>=7.0.0 # If unit/integration tests are added later
+
+# Optional: For advanced profiling (mentioned in summary)
+# cProfile and pstats are standard library
+# memory_profiler>=0.61.0 # Example external profiler
+
+# Optional: For specific HJK-QUANTUM integration (if it provides a Python API)
+# hjk_quantum_api_client # This would be a hypothetical package provided by HJK-QUANTUM, not available on PyPI
+
+# The HJK-QUANTUM project itself is referenced via its GitHub repo and license,
+# not installed as a standard pip package based on the provided info.
+# Its "Megabit Quantum technology" and AI libraries are concepts integrated into this OS,
+# not necessarily direct pip-installable dependencies themselves.
+
+# Note: Versions are set to reasonably recent stable versions.
+# Always check the latest versions and compatibility requirements for your specific use case.
+# Some libraries might require specific system dependencies (e.g., compilers for numpy/scipy, CUDA for GPU-accelerated TF/PyTorch).
