@@ -20,7 +20,7 @@ AetherAI OS draws its core strength from the groundbreaking [HJK-QUANTUM](https:
 
 ### An Open System with a Singular Purpose
 
-While AetherAI OS embraces the principles of open-source development (making it an "open system" like many others), its *singular purpose* – to be the definitive operating system for AI – sets it apart. It is not merely a collection of tools or an online project; it is a complete, bootable operating system environment engineered for the next generation of artificial intelligence.
+While AetherAI OS embraces the principles of open-source development (making it an "open system" like many others), its *singular purpose* – to be the definitive operating system for AI – sets it apart. It is not merely a collection of tools or an online project; it is a complete, bootable operating system environment engineered for the next generation of artificial intelligence.note :​It is based on the Debian kernel, where the AI has access to modify the kernel according to the user's needs . First setup that "KERNEL"
 
 ## Overview
 
